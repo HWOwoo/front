@@ -1,0 +1,11 @@
+.page{ display:flex; flex-direction:column; gap:14px; }
+.header{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.h1{ font-size:18px; font-weight:900; }
+.filters{ display:grid; grid-template-columns: 1fr 1fr 1fr 160px; gap:10px; }
+.tableWrap{ overflow:auto; }
+.table{ width:100%; border-collapse:collapse; font-size:13px; }
+.table th{ text-align:left; color:var(--muted); font-weight:800; border-bottom:1px solid var(--line); padding:10px 8px; white-space:nowrap; }
+.table td{ border-bottom:1px solid var(--line); padding:10px 8px; white-space:nowrap; }
+.trLast td{ border-bottom:0; }
+@media (max-width: 1100px){ .filters{ grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px){ .filters{ grid-template-columns: 1fr; } }

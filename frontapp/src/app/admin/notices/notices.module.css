@@ -1,0 +1,12 @@
+.page{ display:flex; flex-direction:column; gap:14px; }
+.h1{ font-size:18px; font-weight:900; }
+.grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+.row{ display:flex; flex-direction:column; gap:6px; }
+.full{ grid-column: 1 / -1; }
+.actions{ display:flex; justify-content:flex-end; gap:10px; }
+.tableWrap{ overflow:auto; }
+.table{ width:100%; border-collapse:collapse; font-size:13px; }
+.table th{ text-align:left; color:var(--muted); font-weight:800; border-bottom:1px solid var(--line); padding:10px 8px; white-space:nowrap; }
+.table td{ border-bottom:1px solid var(--line); padding:10px 8px; white-space:nowrap; }
+.trLast td{ border-bottom:0; }
+@media (max-width: 900px){ .grid{ grid-template-columns: 1fr; } }

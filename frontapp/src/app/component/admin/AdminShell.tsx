@@ -6,12 +6,41 @@ import React from "react";
 import s from "./AdminShell.module.css";
 
 const nav = [
-  { label: "대시보드", href: "/admin/dashboard" },
-  { label: "지점 목록", href: "/admin/branches" },
-  { label: "신규 지점 생성", href: "/admin/branches/new" },
-  { label: "전체 주문 리스트", href: "/admin/orders" },
-  { label: "상품 등록", href: "/admin/products/new" },
-  { label: "공지/운영", href: "/admin/notices" },
+  {
+    category: "대시보드",
+    icon: "📊",
+    items: [{ label: "대시보드", href: "/admin/dashboard" }],
+  },
+  {
+    category: "지점 관리",
+    icon: "🏪",
+    items: [
+      { label: "지점 목록", href: "/admin/branches" },
+      { label: "신규 지점 생성", href: "/admin/branches/new" },
+      { label: "지점 ID/접속기 관리", href: "/admin/branches/devices" },
+    ],
+  },
+  {
+    category: "주문 관리",
+    icon: "📦",
+    items: [
+      { label: "전체 주문 리스트", href: "/admin/orders" },
+      { label: "지점별 주문 리스트", href: "/admin/orders/by-branch" },
+    ],
+  },
+  {
+    category: "상품 관리",
+    icon: "🛍️",
+    items: [
+      { label: "상품 목록", href: "/admin/products" },
+      { label: "상품 등록/수정", href: "/admin/products/new" },
+    ],
+  },
+  {
+    category: "공지/운영",
+    icon: "📢",
+    items: [{ label: "공지/운영메모", href: "/admin/notices" }],
+  },
 ];
 
 export default function AdminShell({ children }: { children: React.ReactNode }) {
@@ -23,40 +52,54 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
         <div className={s.topbarInner}>
           <div className={s.brand}>
             <span className={s.brandIcon}>🏪</span>
-            공동구매 마켓
+            관리자
           </div>
 
           <div className={s.searchWrap}>
-            <input className={s.search} placeholder="상품명 검색" />
+            <input className={s.search} placeholder="상품명을 입력하세요" />
           </div>
 
           <div className={s.actions}>
-            <Link className={s.actionLink} href="/admin/products/new">
-              상품 생성
-            </Link>
-            <Link className={s.logout} href="/login">
-              로그아웃
-            </Link>
+            <button className={s.actionBtn}>3</button>
+            <button className={s.actionBtn}>But</button>
+            <button className={s.actionBtn}>But</button>
+            <div className={s.userInfo}>
+              <div className={s.avatar}>👤</div>
+              <div className={s.userName}>
+                <div>김민호</div>
+                <div className={s.userRole}>관리자</div>
+              </div>
+            </div>
+            <button className={s.actionBtn}>But</button>
           </div>
         </div>
       </header>
 
       <div className={s.container}>
         <aside className={s.sidebar}>
-          <div className={s.menuTitle}>메뉴</div>
           <nav className={s.nav}>
-            {nav.map((item) => {
-              const active = pathname?.startsWith(item.href);
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`${s.navItem} ${active ? s.active : ""}`}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
+            {nav.map((section) => (
+              <div key={section.category} className={s.navSection}>
+                <div className={s.categoryTitle}>
+                  <span className={s.categoryIcon}>{section.icon}</span>
+                  {section.category}
+                </div>
+                <div className={s.categoryItems}>
+                  {section.items.map((item) => {
+                    const active = pathname === item.href || pathname?.startsWith(item.href + "/");
+                    return (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className={`${s.navItem} ${active ? s.active : ""}`}
+                      >
+                        {item.label}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
           </nav>
         </aside>
 

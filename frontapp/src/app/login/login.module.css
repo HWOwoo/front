@@ -1,0 +1,35 @@
+.wrap{
+    min-height: 100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 20px;
+  }
+  
+  .box{
+    width: min(520px, 100%);
+  }
+  
+  .head{
+    text-align:center;
+    margin-bottom: 14px;
+  }
+  
+  .title{
+    font-size: 24px;
+    font-weight: 900;
+  }
+  
+  .sub{
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  
+  .footer{
+    margin-top: 18px;
+    text-align:center;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  

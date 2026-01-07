@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { Button, Card, Input, Label } from "./component/ui/ui";
-import s from "./login/login.module.css";
+import { Button, Card, Input, Label } from "../component/ui/ui";
+import s from "./login.module.css";
 
-export default function Home() {
+export default function LoginPage() {
   return (
     <div className={s.wrap}>
       <div className={s.box}>
