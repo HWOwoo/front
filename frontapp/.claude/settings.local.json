@@ -10,7 +10,8 @@
       "Bash(Where-Object {$_ProcessName -like '*node*'})",
       "Bash(Format-Table Id,ProcessName,Path -AutoSize)",
       "Bash(netstat:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(del detail.tsx detail.module.css)"
     ],
     "deny": [],
     "ask": []

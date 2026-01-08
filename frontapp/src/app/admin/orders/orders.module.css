@@ -1,11 +1,319 @@
-.page{ display:flex; flex-direction:column; gap:14px; }
-.header{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
-.h1{ font-size:18px; font-weight:900; }
-.filters{ display:grid; grid-template-columns: 1fr 1fr 1fr 160px; gap:10px; }
-.tableWrap{ overflow:auto; }
-.table{ width:100%; border-collapse:collapse; font-size:13px; }
-.table th{ text-align:left; color:var(--muted); font-weight:800; border-bottom:1px solid var(--line); padding:10px 8px; white-space:nowrap; }
-.table td{ border-bottom:1px solid var(--line); padding:10px 8px; white-space:nowrap; }
-.trLast td{ border-bottom:0; }
-@media (max-width: 1100px){ .filters{ grid-template-columns: 1fr 1fr; } }
-@media (max-width: 520px){ .filters{ grid-template-columns: 1fr; } }
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 헤더 */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.h1 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.btnPrimary {
+    padding: 10px 16px;
+    font-size: 14px;
+    background: #3b82f6;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btnPrimary:hover {
+    background: #2563eb;
+}
+
+/* 필터 카드 */
+.filterCard {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.filterRow {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.filterGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.filterLabel {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.filterInput {
+    width: 280px;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.filterInput::placeholder {
+    color: #94a3b8;
+}
+
+.dateButtons {
+    display: flex;
+    gap: 6px;
+    align-items: flex-end;
+}
+
+.dateBtn {
+    padding: 10px 14px;
+    font-size: 13px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #334155;
+}
+
+.dateBtn:hover {
+    background: #f8fafc;
+}
+
+.dateBtnActive {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: #fff;
+}
+
+.dateBtnActive:hover {
+    background: #2563eb;
+}
+
+.filterRow2 {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+.selectWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.select {
+    width: 280px;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #fff;
+    color: #334155;
+    cursor: pointer;
+}
+
+.searchInput {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.searchInput::placeholder {
+    color: #94a3b8;
+}
+
+/* 테이블 카드 */
+.tableCard {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.tableHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.tableTitle {
+    font-size: 15px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.tableCount {
+    font-size: 14px;
+    color: #64748b;
+}
+
+.tableCount strong {
+    color: #3b82f6;
+}
+
+.tableWrap {
+    overflow: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.table th {
+    text-align: center;
+    color: #64748b;
+    font-weight: 600;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 12px 10px;
+    white-space: nowrap;
+}
+
+.table td {
+    text-align: center;
+    border-bottom: 1px solid #f1f5f9;
+    padding: 14px 10px;
+    white-space: nowrap;
+}
+
+.trLast td {
+    border-bottom: 0;
+}
+
+/* 상품명 넓게 */
+.table th:nth-child(3),
+.table td:nth-child(3) {
+    min-width: 150px;
+}
+
+/* 상태 */
+.statusComplete {
+    color: #16a34a;
+    font-weight: 600;
+}
+
+.statusProcessing {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.statusPending {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+/* 상세보기 버튼 */
+.btnSmall {
+    padding: 6px 12px;
+    font-size: 12px;
+    background: #3b82f6;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btnSmall:hover {
+    background: #2563eb;
+}
+
+/* 페이징 */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.pageInfo {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.pageCenter {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.pageBtn {
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #334155;
+    cursor: pointer;
+}
+
+.pageBtn:hover {
+    background: #f8fafc;
+}
+
+.pageBtnActive {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: #fff;
+}
+
+.pageBtnActive:hover {
+    background: #2563eb;
+}
+
+.pageEllipsis {
+    padding: 0 8px;
+    color: #94a3b8;
+}
+
+.pageSelect {
+    padding: 8px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 13px;
+    background: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+    .filterRow,
+    .filterRow2 {
+        flex-wrap: wrap;
+    }
+
+    .filterInput,
+    .select {
+        width: 100%;
+    }
+}
+
+@media (max-width: 520px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .dateButtons {
+        flex-wrap: wrap;
+    }
+}

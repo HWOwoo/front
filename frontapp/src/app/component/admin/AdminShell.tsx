@@ -5,15 +5,16 @@ import { usePathname } from "next/navigation";
 import React from "react";
 import s from "./AdminShell.module.css";
 
+const dashboardItem = {
+  label: "대시보드",
+  icon: "",
+  href: "/admin/dashboard",
+};
+
 const nav = [
   {
-    category: "대시보드",
-    icon: "📊",
-    items: [{ label: "대시보드", href: "/admin/dashboard" }],
-  },
-  {
     category: "지점 관리",
-    icon: "🏪",
+    icon: "",
     items: [
       { label: "지점 목록", href: "/admin/branches" },
       { label: "신규 지점 생성", href: "/admin/branches/new" },
@@ -22,7 +23,7 @@ const nav = [
   },
   {
     category: "주문 관리",
-    icon: "📦",
+    icon: "",
     items: [
       { label: "전체 주문 리스트", href: "/admin/orders" },
       { label: "지점별 주문 리스트", href: "/admin/orders/by-branch" },
@@ -30,7 +31,7 @@ const nav = [
   },
   {
     category: "상품 관리",
-    icon: "🛍️",
+    icon: "",
     items: [
       { label: "상품 목록", href: "/admin/products" },
       { label: "상품 등록/수정", href: "/admin/products/new" },
@@ -38,7 +39,7 @@ const nav = [
   },
   {
     category: "공지/운영",
-    icon: "📢",
+    icon: "",
     items: [{ label: "공지/운영메모", href: "/admin/notices" }],
   },
 ];
@@ -78,6 +79,18 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
       <div className={s.container}>
         <aside className={s.sidebar}>
           <nav className={s.nav}>
+            <Link
+              href={dashboardItem.href}
+              className={`${s.navItem} ${s.singleItem} ${
+                pathname === dashboardItem.href || pathname?.startsWith(dashboardItem.href + "/")
+                  ? s.active
+                  : ""
+              }`}
+            >
+              <span className={s.categoryIcon}>{dashboardItem.icon}</span>
+              {dashboardItem.label}
+            </Link>
+
             {nav.map((section) => (
               <div key={section.category} className={s.navSection}>
                 <div className={s.categoryTitle}>

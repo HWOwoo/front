@@ -151,6 +151,7 @@
   color: #9ca3af;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  justify-content: center;
 }
 
 .categoryIcon {
@@ -180,6 +181,15 @@
   background: rgba(59, 130, 246, 0.15);
   color: #60a5fa;
   border-left-color: #60a5fa;
+  font-weight: 600;
+}
+
+.navItem.singleItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  margin-bottom: 8px;
   font-weight: 600;
 }
 
