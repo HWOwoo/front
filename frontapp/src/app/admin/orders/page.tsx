@@ -1,3 +1,4 @@
+import Link from "next/link";
 import s from "./orders.module.css";
 
 export default function OrdersPage() {
@@ -9,7 +10,7 @@ export default function OrdersPage() {
     { orderNo: "ORD-20230614-002", branch: "인천점", product: "청양고추 고추장", qty: 1, time: "2023-06-14 11:45:33", status: "취소" },
   ];
 
-  function getStatusClass(status) {
+  function getStatusClass(status: string) {
     if (status === "완료") return s.statusComplete;
     if (status === "처리중") return s.statusProcessing;
     if (status === "취소") return s.statusPending;
@@ -101,7 +102,9 @@ export default function OrdersPage() {
                       <span className={getStatusClass(r.status)}>{r.status}</span>
                     </td>
                     <td>
-                      <button className={s.btnSmall}>상세보기</button>
+                      <Link href={`/admin/orders/${r.orderNo}`}>
+                        <button className={s.btnSmall}>상세보기</button>
+                      </Link>
                     </td>
                   </tr>
               ))}

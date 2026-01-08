@@ -26,7 +26,7 @@ const nav = [
     icon: "",
     items: [
       { label: "전체 주문 리스트", href: "/admin/orders" },
-      { label: "지점별 주문 리스트", href: "/admin/orders/by-branch" },
+      { label: "지점별 주문 리스트", href: "/admin/branches/orders" },
     ],
   },
   {

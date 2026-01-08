@@ -1,7 +1,238 @@
-.page{ display:flex; flex-direction:column; gap:14px; }
-.h1{ font-size:18px; font-weight:900; }
-.grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
-.row{ display:flex; flex-direction:column; gap:6px; }
-.full{ grid-column: 1 / -1; }
-.actions{ display:flex; justify-content:flex-end; gap:10px; }
-@media (max-width: 900px){ .grid{ grid-template-columns: 1fr; } }
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #f6f8fb;
+  min-height: calc(100vh - 56px);
+  padding: 18px 22px;
+}
+
+/* 상단 헤더 */
+.topHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.h1 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
+
+.desc {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.topActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.linkReset {
+  text-decoration: none;
+}
+
+.btnCancel {
+  height: 32px;
+  padding: 0 14px;
+  border-radius: 6px;
+  border: 1px solid #e6edf5;
+  background: #f1f3f6;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.btnCancel:hover {
+  background: #e9eef6;
+}
+
+.btnPrimary {
+  height: 32px;
+  padding: 0 14px;
+  border-radius: 6px;
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.btnPrimary:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+/* 메인 카드 */
+.card {
+  background: #fff;
+  border: 1px solid #e8eef6;
+  border-radius: 8px;
+}
+
+.cardInner {
+  padding: 18px;
+}
+
+/* 폼 레이아웃 */
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 800;
+  color: #374151;
+}
+
+.req {
+  color: #ef4444;
+  margin-left: 3px;
+}
+
+.input,
+.select {
+  height: 36px;
+  border: 1px solid #e6edf5;
+  border-radius: 6px;
+  padding: 0 12px;
+  font-size: 14px;
+  color: #111827;
+  outline: none;
+  background: #fff;
+}
+
+.input::placeholder {
+  color: #9aa4b2;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: #cfe0ff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.textarea {
+  border: 1px solid #e6edf5;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 14px;
+  color: #111827;
+  outline: none;
+  resize: vertical;
+}
+
+.textarea::placeholder {
+  color: #9aa4b2;
+}
+
+/* 이미지 업로드 박스 4개 */
+.imageRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 6px 0 14px;
+  height: 300px;
+}
+
+.uploadBox {
+  height: 298px;
+  border-radius: 8px;
+  border: 2px dashed #e6edf5;
+  background: #fbfcfe;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  text-align: center;
+  align-content: center;
+}
+
+.uploadBox:hover {
+  border-color: #cfe0ff;
+  background: #f6f9ff;
+}
+
+.plus {
+  font-size: 22px;
+  font-weight: 900;
+  color: #9aa4b2;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.uploadText {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 800;
+}
+
+/* 하단 바 */
+.bottomBar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.btnGhost {
+  height: 36px;
+  padding: 0 18px;
+  border-radius: 6px;
+  border: 1px solid #e6edf5;
+  background: #f1f3f6;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.btnGhost:hover {
+  background: #e9eef6;
+}
+
+.btnPrimaryBig {
+  height: 36px;
+  padding: 0 18px;
+  border-radius: 6px;
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+.btnPrimaryBig:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+@media (max-width: 1000px) {
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+
+  .imageRow {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -33,7 +33,7 @@
 .toggle {
   width: 44px;
   height: 24px;
-  background: #22c55e;
+  background: #47b5ff;
   border-radius: 12px;
   position: relative;
   cursor: pointer;
@@ -62,8 +62,7 @@
 
 .statusLabel {
   padding: 4px 10px;
-  background: #dcfce7;
-  color: #16a34a;
+  color: #47b5ff;
   border-radius: 4px;
   font-size: 12px;
   font-weight: 600;

@@ -1,7 +1,12 @@
 import Link from "next/link";
 import s from "./detail.module.css";
 
-export default async function BranchDetailPage({ params }) {
+type PageProps = {
+  params: { id: string };
+  // searchParams?: Record<string, string | string[] | undefined>; // 필요하면 추가
+};
+
+export default async function BranchDetailPage({ params }: PageProps) {
   const { id } = await params;
 
   const branch = {

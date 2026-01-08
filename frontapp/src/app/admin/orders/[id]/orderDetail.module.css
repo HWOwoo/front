@@ -1,0 +1,191 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 헤더 */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.h1 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.sub {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.statusBadge {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.btnPrimary {
+  padding: 10px 16px;
+  font-size: 14px;
+  background: #3b82f6;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btnPrimary:hover {
+  background: #2563eb;
+}
+
+.btnSecondary {
+  padding: 10px 16px;
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  color: #334155;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btnSecondary:hover {
+  background: #f8fafc;
+}
+
+.btnDanger {
+  padding: 10px 16px;
+  font-size: 14px;
+  background: #ef4444;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btnDanger:hover {
+  background: #dc2626;
+}
+
+/* 컨텐츠 그리드 */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.cardTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 20px;
+}
+
+/* 정보 리스트 */
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.infoRow {
+  display: flex;
+  gap: 16px;
+}
+
+.infoLabel {
+  width: 100px;
+  font-size: 13px;
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.infoValue {
+  font-size: 14px;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.link {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: #2563eb;
+}
+
+/* 상태 스타일 */
+.statusComplete {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.statusProcessing {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.statusCanceled {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* 하단 */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.footerActions {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footerActions {
+    width: 100%;
+  }
+
+  .footerActions button {
+    flex: 1;
+  }
+}

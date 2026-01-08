@@ -1,12 +1,250 @@
-.page{ display:flex; flex-direction:column; gap:14px; }
-.h1{ font-size:18px; font-weight:900; }
-.grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
-.row{ display:flex; flex-direction:column; gap:6px; }
-.full{ grid-column: 1 / -1; }
-.actions{ display:flex; justify-content:flex-end; gap:10px; }
-.tableWrap{ overflow:auto; }
-.table{ width:100%; border-collapse:collapse; font-size:13px; }
-.table th{ text-align:left; color:var(--muted); font-weight:800; border-bottom:1px solid var(--line); padding:10px 8px; white-space:nowrap; }
-.table td{ border-bottom:1px solid var(--line); padding:10px 8px; white-space:nowrap; }
-.trLast td{ border-bottom:0; }
-@media (max-width: 900px){ .grid{ grid-template-columns: 1fr; } }
+.page {
+  background: #f6f8fb;
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 공통 카드 */
+.card {
+  background: #fff;
+  border: 1px solid #e8eef6;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.cardTitle {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+  font-weight: 900;
+  color: #374151;
+}
+
+/* ===== 등록 폼 ===== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 800;
+  color: #6b7280;
+}
+
+.input {
+  height: 34px;
+  border: 1px solid #e6edf5;
+  border-radius: 6px;
+  padding: 0 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+.textarea {
+  border: 1px solid #e6edf5;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+  resize: vertical;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #9aa4b2;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #cfe0ff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2px;
+}
+
+.btnPrimary {
+  height: 32px;
+  padding: 0 16px;
+  border-radius: 6px;
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.btnPrimary:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+/* ===== 목록 헤더 ===== */
+.listHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.searchInput {
+  width: 220px;
+  height: 30px;
+  border: 1px solid #e6edf5;
+  border-radius: 6px;
+  padding: 0 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.searchInput:focus {
+  border-color: #cfe0ff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.btnSearch {
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 6px;
+  border: 1px solid #e6edf5;
+  background: #fff;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.btnSearch:hover {
+  background: #f7fafc;
+}
+
+/* ===== 테이블 ===== */
+.tableWrap {
+  overflow: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table thead th {
+  background: #f5f7fb;
+  color: #6b7280;
+  font-weight: 900;
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid #eef2f7;
+  white-space: nowrap;
+}
+
+.table tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f0f3f8;
+  color: #111827;
+}
+
+.table tbody tr:hover td {
+  background: #fafcff;
+}
+
+.thDate,
+.tdDate {
+  width: 120px;
+  text-align: right;
+  color: #6b7280;
+}
+
+.thManage,
+.tdManage {
+  width: 110px;
+  text-align: right;
+}
+
+.tdTitle {
+  color: #111827;
+}
+
+/* 관리 버튼(회색 버튼 느낌) */
+.btnManage {
+  height: 26px;
+  padding: 0 12px;
+  border-radius: 6px;
+  border: 1px solid #e6edf5;
+  background: #fff;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.btnManage:hover {
+  background: #f7fafc;
+}
+
+/* ===== 페이징 ===== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding-top: 14px;
+}
+
+.pageBtn {
+  min-width: 30px;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 6px;
+  border: 1px solid #e6edf5;
+  background: #fff;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.pageBtn:hover {
+  background: #f7fafc;
+}
+
+.pageActive {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .listHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchInput {
+    width: 100%;
+  }
+
+  .searchBar {
+    width: 100%;
+  }
+}

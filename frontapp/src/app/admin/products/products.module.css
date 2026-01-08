@@ -1,0 +1,301 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.h1 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.btnPrimary {
+  padding: 10px 16px;
+  font-size: 14px;
+  background: #3b82f6;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btnPrimary:hover {
+  background: #2563eb;
+}
+
+.btnSecondary {
+  padding: 8px 16px;
+  font-size: 13px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  color: #334155;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btnSecondary:hover {
+  background: #f8fafc;
+}
+
+/* 검색바 */
+.searchBar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.searchInput {
+  flex: 1;
+}
+
+.input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.searchRight {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.select {
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 13px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.searchButtons {
+  display: flex;
+  gap: 8px;
+}
+
+/* 카드 */
+.card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tableHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tableCount {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.tableCount strong {
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.tableActions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* 테이블 */
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.table th {
+  text-align: left;
+  color: #64748b;
+  font-weight: 600;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 12px 16px;
+  white-space: nowrap;
+  background: #f8fafc;
+}
+
+.table td {
+  border-bottom: 1px solid #e2e8f0;
+  padding: 12px 16px;
+  white-space: nowrap;
+  color: #1e293b;
+}
+
+.trLast td {
+  border-bottom: 0;
+}
+
+.productName {
+  font-weight: 500;
+}
+
+.price {
+  font-weight: 600;
+  color: #3b82f6;
+}
+
+.stockZero {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* 액션 버튼 */
+.actions {
+  display: flex;
+  gap: 6px;
+}
+
+.btnSmall {
+  padding: 6px 12px;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btnBlue {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.btnBlue:hover {
+  background: #2563eb;
+}
+
+.btnGray {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.btnGray:hover {
+  background: #cbd5e1;
+}
+
+.btnRed {
+  background: #ef4444;
+  color: #fff;
+}
+
+.btnRed:hover {
+  background: #dc2626;
+}
+
+.btnGreen {
+  background: #22c55e;
+  color: #fff;
+}
+
+.btnGreen:hover {
+  background: #16a34a;
+}
+
+/* 상태 */
+.statusActive {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #dcfce7;
+  color: #16a34a;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.statusOutOfStock {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #fee2e2;
+  color: #dc2626;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.statusInactive {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #f1f5f9;
+  color: #64748b;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* 페이징 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px 20px;
+}
+
+.pageBtn {
+  padding: 6px 12px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #64748b;
+  min-width: 36px;
+}
+
+.pageBtn:hover {
+  background: #f8fafc;
+}
+
+.pageBtnActive {
+  background: #3b82f6;
+  color: #fff;
+  border-color: #3b82f6;
+}
+
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .searchBar {
+    flex-direction: column;
+  }
+
+  .searchRight {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .tableHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
